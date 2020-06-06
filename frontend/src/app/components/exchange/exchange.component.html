@@ -1,0 +1,235 @@
+<div id="wrapper">
+  <app-navbar></app-navbar>
+  <main>
+    <section class="graph-section">
+      <div class="container">
+        <div class="row">
+          <!-- left tab starts -->
+          <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 left-side-col">
+            <!-- tabs starts -->
+            <br>
+            <!-- Nav tabs -->
+            <app-rates></app-rates>
+          </div>
+          <div class="col-sm-9 col-md-9 col-lg-9 col-xl-9 right-side-col">
+            <div id="tradingview_8e6fe" style="background:#272935;height:60vh;">
+              <app-graph></app-graph>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div id="buy-sell-ltc">
+                  <div>
+                    <!-- <ng-flash-message></ng-flash-message> -->
+                    <div class="buy-sell-ltc">
+                      <div class="trade-content">
+                        <div class="trade buyIn">
+                          <h3 class="greenFont text-center py-3">Nákup {{coinz}}</h3>
+                          <form [formGroup]="buy" (submit)="onSubmitBuy()">
+                            <ul>
+                              <li class="input-text">
+                                <div
+                                  [ngClass]="{'has-error': (buy.controls.quantity.errors && buy.controls.quantity.dirty), 'has-success': !buy.controls.quantity.errors}">
+                                  <label for="quantity">
+                                    <input name="quantity" type="text" maxlength="14" autocomplete="off"
+                                      placeholder="Suma" formControlName="quantity" [(ngModel)]="a1">
+                                    <span class="unit">USDT</span>
+                                  </label>
+                                </div>
+                              </li>
+                              <li class="label trans pt-3">
+                                <span class="trans-tit">Cena</span>
+                                <span class="trans-cont">{{prize}} USDT</span>
+                              </li>
+                              <li class="label trans">
+                                <span class="trans-tit">Dostanete</span>
+                                <span class="trans-cont">{{((a1/prize) | number:'1.1-8') || 0}} {{coinz}}</span>
+                              </li>
+                            </ul>
+                            <button [disabled]="!buy.valid" type="submit" class="btn btn-success waves-light col-12">
+                              <span>Nákup {{coinz}}</span>
+                            </button>
+                          </form>
+                        </div>
+                        <div class="trade buyOut">
+                          <h3 class="redFont text-center py-3">Predaj {{coinz}}</h3>
+                          <form [formGroup]="sell" (submit)="onSubmitSell()">
+                            <ul>
+                              <li class="input-text">
+                                <label for="quantity1">
+                                  <input name="quantity1" type="text" maxlength="14" placeholder="Suma"
+                                    formControlName="quantity1" autocomplete="off" [(ngModel)]="a2">
+                                  <span class="unit">{{coinz}}</span>
+                                </label>
+                              </li>
+                              <li class="label trans pt-3">
+                                <span class="trans-tit">Cena</span>
+                                <span class="trans-cont">{{prize}} USDT</span>
+                              </li>
+                              <li class="label trans">
+                                <span class="trans-tit">Dostanete</span>
+                                <span class="trans-cont">{{((a2*prize) | number:'1.1-8') || 0}} USDT</span>
+                              </li>
+                            </ul>
+                            <button [disabled]="!sell.valid" type="submit" class="btn btn-danger waves-light col-12">
+                              <span>Predaj {{coinz}}</span>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <main>
+                        <div id="kyc">
+                          <div tabindex="-1" class="vodal" style="animation-duration: 300ms; display: none;">
+                            <div class="vodal-mask"></div>
+                            <div class="vodal-dialog"
+                              style="width: 440px; height: 260px; animation-duration: 300ms; display: none;">
+                              <span class="vodal-close"></span>
+                              <header class="vodal-title">Settings</header>
+                              <div class="content">
+                                <p class="lists-tit">Please complete the following settings first:</p>
+                                <div class="btn">Settings</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </main>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- buy-sell-ltc ends -->
+              <!-- order book starts -->
+              <!-- <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 order-book-container">
+                <div id="order-book">
+                  <div data-v-4d4817b6="">
+                    <div class="order-book-cont">
+                      <dl>
+                        <dt>
+                          <div class="inner">
+                            <span class="layer"></span>
+                            <span data-v-55341d60="" class="price">Price</span>
+                            <span data-v-55341d60="" class="amount">Quantity</span>
+                          </div>
+                        </dt>
+                        <dd>
+                          <div class="inner mt-1" *ngFor="let bid of bidsasks">
+                            <span class="layer">Ask</span>
+                            <span class="price">
+                              <font style="color:#ff2d2d;">{{bid.askPrice}}</font>
+                            </span>
+                            <span class="amount">{{bid.askQty | number}}</span>
+                          </div>
+                        </dd>
+                      </dl>
+                      <div class="average">
+                        73.62
+                        <span class="refPrice">≈$73.6200</span>
+                      </div>
+                      <dl>
+                        <dd>
+                          <div class="inner mt-1" *ngFor="let bid of bidsasks">
+                            <span class="layer">Bid</span>
+                            <span class="price">
+                              <font style="color:#11c40d;">{{bid.bidPrice}}</font>
+                            </span>
+                            <span class="amount">{{bid.bidQty | number}}</span>
+                          </div>
+                        </dd>
+                      </dl>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <!-- order book ends -->
+            </div>
+            <!-- right-side-bottom ends -->
+          </div>
+          <!-- right tab ends -->
+        </div>
+      </div>
+    </section>
+    <!-- second-section starts -->
+    <section class="second-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 pdding-lft-0">
+            <div class=" left-side-col">
+              <br>
+              <mat-tab-group>
+                <mat-tab label="Otvorené transakcie">
+                  <ng-template matTabContent>
+                    <table class=" table table-hover white-text">
+                      <thead>
+                        <tr>
+                          <th style="width:20%;">Kryptomena</th>
+                          <th style="width:20%;">Typ</th>
+                          <th style="width:20%;">Cena</th>
+                          <th style="width:20%;">Množstvo</th>
+                          <th style="width:20%;">Spolu</th>
+                          <th style="width:20%;">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let trade of unfilled">
+                          <td scope="row">{{trade.status.symbol}}</td>
+                          <td>{{trade.status.side}}</td>
+                          <td>{{trade.status.price}}</td>
+                          <td>{{trade.status.origQty}}</td>
+                          <td>{{trade.status.price*trade.status.origQty}}</td>
+                          <td>UNFILLED</td>
+                          <td>
+                            <button class="btn btn-danger"
+                              (click)="cancelone(trade.status.orderId,trade.status.symbol)"><span
+                                class="glyphicon glyphicon-trash"></span></button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="6" class="text-center" *ngIf="unfilled?.length == 0">
+                            Nemáte žiadne otvorené transakcie !!
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ng-template>
+                </mat-tab>
+                <mat-tab label="Zatvorené transakcie">
+                  <ng-template matTabContent>
+                    <table class="col-12 table table-hover white-text">
+                      <thead>
+                        <tr>
+                          <th style="width:25%">Kryptomena</th>
+                          <th style="width:25%">Typ</th>
+                          <th style="width:25%">Cena</th>
+                          <th style="width:25%">Množstvo</th>
+                          <th style="width:25%">Spolu</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let trade of filled">
+                          <td scope="row">{{trade.status.symbol}}</td>
+                          <td>{{trade.status.side}}</td>
+                          <td>{{trade.status.price}} &nbsp;<em style="color:#919499;font-size:12px;">BTC</em></td>
+                          <td>{{trade.status.origQty | number}} &nbsp;<em
+                              style="color:#919499;font-size:12px;">{{trade.status.symbol}}</em></td>
+                          <td>{{(trade.status.origQty*trade.status.price) | number:'1.1-8'}} &nbsp;<em
+                              style="color:#919499;font-size:12px;">BTC</em></td>
+                        </tr>
+                        <tr>
+                          <td colspan="6" class="text-center" *ngIf="filled?.length == 0">
+                            Nemáte žiadne zatvorené transakcie !!
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </ng-template>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- second-section ends -->
+  </main>
+</div>

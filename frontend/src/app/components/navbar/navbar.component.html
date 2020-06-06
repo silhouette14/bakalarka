@@ -1,0 +1,32 @@
+<div style="height:56px;">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/home/logo.png" alt="placeholder image" width=100px>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+      <ul class="navbar-nav">
+        <li *ngIf="authService.loggedIn()" class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+            routerLink="/exchange">Dashboard</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item mr-3">
+          <a class="nav-link" style="cursor: default;">
+            <i class="fa fa-user"></i>
+            {{username}}
+          </a>
+        </li>
+        <li *ngIf="authService.loggedIn()" class="nav-item">
+          <a class="nav-link" (click)="onLogoutClick()">
+            <i class="fa fa-sign-out"></i>
+            Odhlásiť
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>

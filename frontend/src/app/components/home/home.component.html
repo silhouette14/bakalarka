@@ -1,0 +1,240 @@
+<!-- <div style="height:56px;">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" routerLink="/">
+      <img src="../../../assets/pic/logo.png" alt="placeholder image" width=100px>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar6">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse justify-content-stretch" id="navbar6">
+      <ul class="navbar-nav">
+        <li *ngIf="authService.loggedIn()" class="nav-item">
+          <a class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"
+            routerLink="/exchange">Exchange</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li *ngIf="authService.loggedIn() && show" class="nav-item">
+          <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+        </li>
+        <li *ngIf="!authService.loggedIn()" class="nav-item">
+          <a class="nav-link" (click)="form.show()">Login</a>
+        </li>
+        <li *ngIf="!authService.loggedIn()" class="nav-item">
+          <a class="nav-link" (click)="form1.show()">Signup</a>
+        </li>
+        <li *ngIf="authService.loggedIn()" class="nav-item">
+          <a class="nav-link" (click)="onLogoutClick()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div> -->
+
+<div class="page-wrapper">
+  <!-- Main Header-->
+  <header class="main-header header-style-one">
+
+    <!-- Header Upper -->
+    <div class="header-upper">
+      <div class="inner-container">
+        <div class="container-fluid clearfix">
+          <div class="nav-inner">
+            <div class="logo-outer">
+              <div class="logo"><a routerLink="/">
+                  <img src="../../../assets/home/logo.png" alt="logo-image">
+                </a></div>
+            </div>
+            <div class="nav-outer clearfix">
+              <a *ngIf="authService.loggedIn()" routerLink="/exchange" class="theme-btn btn-style-one">Dashboard</a>
+              <a *ngIf="authService.loggedIn()" href='#' (click)="onLogoutClick()"
+                class="theme-btn btn-style-two">Odhlásiť</a>
+              <a *ngIf="!authService.loggedIn()" href="#" class="theme-btn btn-style-one"
+                (click)="form.show()">prihlásenie</a>
+              <a *ngIf="!authService.loggedIn()" href="#" class="theme-btn btn-style-two" (click)="form1.show()">Registrácia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--End Header Upper-->
+  </header>
+  <!--End Main Header -->
+  <!-- Bnner Section -->
+  <section class="banner-section" style="background-image: url(../../../assets/home/banner.jpg);">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+          <div class="content-box">
+            <h1>Budúcnosť vo svete <span>finančných technológii</span></h1>
+          </div>
+        </div>
+        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12">
+          <div class="image-column">
+            <figure>
+              <img src="../../../assets/home/banner-small.png" alt="image">
+            </figure>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="buy-sell">
+            <ul>
+              <li>
+                <i class="icon">
+                  <img src="../../../assets/home/euro.png" alt="image">
+                </i>
+                Nákup {{coinSelected}} Cena
+                <span class="price">{{rates[coinSelected + 'USDT'] + 1}}</span>
+              </li>
+              <li>
+                <mat-form-field>
+                  <mat-label class="white-text">Zvoľte si Kryptomenu</mat-label>
+                  <mat-select [(value)]="coinSelected">
+                    <mat-option value="BTC"><img src="../../../assets/home/BTC.png" alt="BTC-Image" class="mr-3"
+                        width="25px">Bitcoin (BTC)</mat-option>
+                    <mat-option value="LTC"><img src="../../../assets/home/LTC.png" alt="LTC-Image" class="mr-3"
+                        width="25px">Litecoin (LTC)</mat-option>
+                    <mat-option value="ETH"><img src="../../../assets/home/ETH.png" alt="ETH-Image" class="mr-3"
+                        width="25px">Ethereum (ETH)</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+              </li>
+              <!-- <p>You selected: {{selected}}</p> -->
+              <li>
+                <i class="icon">
+                  <img src="../../../assets/home/euro.png" alt="image">
+                </i>
+                Predaj {{coinSelected}} Cena
+                <span class="price">{{rates[coinSelected + 'USDT'] - 1}}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Bnner Section -->
+
+  <!--Login Form-->
+
+  <div mdbModal #form="mdb-modal" class="modal fade" id="modalLogin" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header white-text">
+          <h4 class="title"><i class="fa fa-user"></i> Prihlásenie</h4>
+          <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close"
+            (click)="form.hide()">
+            <span aria-hidden="true" (click)="form.hide()">×</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+          <div class="row show-hide-message">
+            <div class="col-12 text-center" [ngClass]="messageClass">
+              {{ message }}
+            </div>
+          </div>
+          <form [formGroup]="login" (submit)="onSubmitLogin()">
+            <mat-form-field class="col-12">
+              <input matInput placeholder="Email" class="form-control-sm" formControlName="email"
+                autocomplete="off" required>
+              <mat-icon matPrefix>email</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field class="col-12">
+              <input matInput placeholder="Heslo" [type]="hide ? 'password' : 'text'" formControlName="password"
+                required>
+              <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+              <mat-icon matPrefix>lock</mat-icon>
+            </mat-form-field>
+
+            <div class="text-center mt-2">
+              <button type="submit" class="btn btn-primary btn-login waves-light" mdbWavesEffect>Prihlásiť sa <i
+                  class="fa fa-sign-in ml-1"></i></button>
+            </div>
+          </form>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer">
+          <div class="options text-center text-md-left mt-1">
+            <!-- <p>Not a member? <a class="link-text" href="#" (click)="form.hide() || form1.show()">Sign Up</a></p>
+            <p>Forgot <a class="link-text" href="#">Password?</a></p> -->
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-close ml-auto" data-dismiss="modal"
+            (click)="form.hide()" mdbWavesEffect>Zavrieť</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Registration Form-->
+
+  <div mdbModal #form1="mdb-modal" class="modal fade" id="modalRegister" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header white-text">
+          <h4 class="title"><i class="fa fa-user-plus"></i> Registrácia</h4>
+          <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close"
+            (click)="form.hide()">
+            <span aria-hidden="true" (click)="form1.hide()">×</span>
+          </button>
+        </div>
+        <!--Body-->
+        <div class="modal-body">
+          <div class="row show-hide-message">
+            <div class="col-12 text-center" [ngClass]="messageClass">
+              {{ message }}
+            </div>
+          </div>
+          <form [formGroup]="register" (submit)="onSubmitRegister()" autocomplete="off">
+            <div class="md-form form-sm mb-4">
+              <i class="fa fa-user prefix"></i>
+              <input mdbInputDirective type="text" id="form52" class="form-control"
+                data-error="3-15 znakov" data-success="." formControlName="username" required>
+              <label for="form52">Meno používateľa</label>
+            </div>
+
+            <div class="md-form form-sm mb-4">
+              <i class="fa fa-envelope prefix"></i>
+              <input mdbInputDirective type="text" id="form32" class="form-control" data-error="Nesprávny Email"
+                data-success="." formControlName="email" required>
+              <label for="form32">Email</label>
+            </div>
+
+            <div class="md-form form-sm mb-4">
+              <i class="fa fa-lock prefix"></i>
+              <input mdbInputDirective type="password" id="form33" autocomplete="new-password" class="form-control"
+                data-error="5-20 písmen a čísiel" data-success="Silné heslo" formControlName="password" required>
+              <label for="form33">Heslo</label>
+            </div>
+
+            <!-- <div class="text-center">
+              <mat-checkbox formControlName="checkbox" id="checkbox" value="checkbox">Prečítal som si a súhlasim s
+                <a class="link-text" href="#">"Obchodnými podmienkami"</a></mat-checkbox>
+            </div> -->
+
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-signup col-sm-4 waves-light" mdbWavesEffect>Odoslať
+                <i class="fa fa-sign-in ml-1"></i></button>
+            </div>
+          </form>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer">
+          <div class="options text-center text-md-right mt-1">
+            <p>Máte už účet? <a class="link-text" href="#" (click)="form1.hide() || form.show()">Prihlásiť sa</a>
+            </p>
+          </div>
+          <button type="button" class="btn btn-outline-primary btn-close ml-auto" data-dismiss="modal"
+            (click)="form1.hide()" mdbWavesEffect>Zavrieť</button>
+        </div>
+      </div>
+    </div>
+  </div>

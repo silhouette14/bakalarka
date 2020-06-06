@@ -1,0 +1,42 @@
+<span class="text-center">
+  <h5 class="pb-2"> Kryptomeny </h5>
+</span>
+<div class="tab-content left-side-tab">
+  <div id="home" class="container tab-pane active">
+    <ul>
+      <li (click)="coin('BTC')" class="active">
+        <a href="javascript:void(0);">
+          <span>
+            <img src="../../../../assets/pic/BTC.png" alt="BTC-Image" width="20px">
+            Bitcoin (BTC)
+          </span>
+          <span class="float-right" *ngIf="show">
+            <font style="color:#7c88a0">{{rates.BTCUSDT}} USDT</font>
+          </span>
+        </a>
+      </li>
+      <li (click)="coin('LTC')">
+        <a href="javascript:void(0);">
+          <span>
+            <img src="../../../../assets/pic/LTCBTC.png" alt="BTC-Image" width="20px">
+            Litecoin (LTC)
+          </span>
+          <span class="float-right" *ngIf="show">
+            <font style="color:#7c88a0">{{rates.LTCUSDT}} USDT</font>
+          </span>
+        </a>
+      </li>
+      <li (click)="coin('ETH')">
+        <a href="javascript:void(0);">
+          <span>
+            <img src="../../../../assets/pic/ETHBTC.png" alt="BTC-Image" width="20px">
+            Ethereum (ETH)
+          </span>
+          <span class="float-right" *ngIf="show">
+            <font style="color:#7c88a0">{{rates.ETHUSDT}} USDT</font>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

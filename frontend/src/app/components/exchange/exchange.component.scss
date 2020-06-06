@@ -1,0 +1,810 @@
+
+
+.scrollbar
+{
+	/* margin-left: 30px; */
+	/* float: left; */
+	height: 300px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	/* margin-bottom: 25px; */
+}
+
+#style-7::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #101663;
+	border-radius: 10px;
+}
+
+#style-7::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-7::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-image: -webkit-gradient(linear,
+									   left bottom,
+									   left top,
+									   color-stop(0.44, rgb(122,153,217)),
+									   color-stop(0.72, rgb(73,125,189)),
+									   color-stop(0.86, rgb(28,58,148)));
+}
+.placeholder {
+    color: white;
+}
+.mat-tab-label {
+    color: white;
+}
+
+table.mytable {  font: .9em/1.2em Georgia, "Times New Roman", Times, serif; }
+// .mytable caption { font-size: 1.3em; font-weight: bold; text-align: left; padding: 1em 4px; }
+// .mytable td,
+// .mytable th { padding: 3px 3px .75em 3px; line-height: 1.3em; }
+// .mytable th { background: #839E99; color: #fff; font-weight: bold; text-align: left; padding-right: .5em; vertical-align: top; }
+// .mytable thead th { background: #2C5755; text-align: center; }
+// .mytable .odd td { background: #DBE6DD; }
+// .mytable .odd th { background: #6E8D88; }
+// .mytable td a,
+// .mytable td a:link { color: #325C91; }
+// .mytable td a:visited { color: #466C8E; }
+// .mytable td a:hover,
+// .mytable td a:focus { color: #1E4C94; }
+// .mytable th a,
+// .mytable td a:active { color: #fff; }
+// .mytable tfoot th,
+// .mytable tfoot td { background: #2C5755; color: #fff; }
+// .mytable th + td { padding-left: .5em; }
+/* ================================= header styling starts ================================== */
+.mat-tab-label {
+    color: #ffffff;
+}
+
+#header {
+    background: #272935;
+}
+
+/* navigatiom */
+
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-item a {
+    color: #fff;
+    margin-left: 30px;
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-brand:hover {
+    color: #5b90e4;
+}
+
+.navbar-brand {
+    margin-left: 0 !important;
+}
+
+/* ================================= header styling ends ================================== */
+
+/* =================================== body styling starts ================================= */
+
+/* ===================================== comman styling starts ============================= */
+
+body {
+    background-color: #31343d;
+}
+
+main {
+    padding: 20px 0;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.pdding-lft-15px {
+    padding-left: 15px;
+}
+
+.form-control:focus {
+    background-color: transparent;
+}
+
+.pdding-lft-0 {
+    padding-left: 0;
+}
+
+/* ===================================== comman styling ends ================================ */
+
+/* =================================== left-side-column ===================================== */
+
+.left-side-col {
+    background-color: #272935;
+    padding: 0 2px 0 10px;
+    border-color: #2e313a;
+    color: #fff;
+    /* max-height: 700px;
+    overflow: auto; */
+}
+
+#home {
+    padding: 0;
+}
+
+#home ul li a span {
+    font-size: 12px;
+    line-height: 2.5;
+    color: #fff;
+}
+
+#home ul li a span.float-right {
+    color: #33ae72;
+}
+
+#home ul li.red a span.float-right {
+    color: #ee6560;
+}
+
+#home li:hover {
+    background-color: #2c2f3a;
+}
+
+#home li:hover a {
+    cursor: pointer;
+}
+
+/* ********** nav tabs starts ************* */
+
+.nav-tabs {
+    border-bottom: 1px solid #2e313a;
+}
+
+.nav-tabs .nav-link {
+    padding: 0 6px;
+    font-size: 12px;
+    color: #7c88a0;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 500;
+    color: #5b90e4;
+    border-bottom: 1px solid #5b90e4;
+}
+
+/* ********** nav tabs ends ************* */
+
+/* ******************* seacr-bar ************** */
+
+.search-bar input {
+    width: 100% !important;
+    margin-top: 20px;
+    height: 30px;
+    border-radius: 4px;
+    padding-left: 25px;
+    border: 1px solid #272935;
+    box-sizing: border-box;
+    position: relative;
+    background-color: #363943;
+}
+
+/* for fancy scroll bar */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #272935;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #272935;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #363943;
+}
+
+.left-side-tab ul li {
+    padding-right: 6px;
+}
+
+/* =================================== left-side-column =================================== */
+
+/* tabs */
+
+.left-side-tab ul {
+    padding: 0;
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+/* =================================== body styling ends ================================== */
+
+/* ========================== right-side-bottom styling strts ========================= */
+
+#buy-sell-ltc {
+    overflow: hidden;
+    /* float: left;
+    width: 62.7%; */
+    /* min-width: 552px; */
+    height: 325px;
+    box-sizing: border-box;
+    padding-right: 5px;
+    background-color: #31343d;
+    margin-top: 15px;
+}
+
+.buy-sell-ltc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.buy-sell-ltc .trade {
+    box-sizing: border-box;
+    float: left;
+    width: 50%;
+}
+
+.buy-sell-ltc .trade-content {
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 360px;
+    padding: 20px 18px 39px 20px;
+    background-color: #272935;
+    text-align: left;
+}
+
+.buy-sell-ltc .buyIn {
+    padding-right: 20px;
+    border-right: 1px solid #2e313a;
+}
+
+.buy-sell-ltc .trade h3 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.greenFont {
+    color: #33ae72;
+}
+
+.buy-sell-ltc .trade .input-text {
+    position: relative;
+}
+
+.buy-sell-ltc .trade .input-text input {
+    height: 37px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 14px;
+    text-indent: 10px;
+    background-color: #363943;
+    border: 0;
+    color: #cdd1ea;
+}
+
+.buy-sell-ltc .trade .input-text .unit {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 14px;
+    line-height: 37px;
+    color: #cdd1ea;
+}
+
+.buy-sell-ltc .trade .refPrice {
+    margin: 5px 10px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #7c88a0;
+}
+
+.buy-sell-ltc .trade .position {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.buy-sell-ltc .trade .position span {
+    cursor: pointer;
+    -ms-flex: 1;
+    flex: 1;
+    height: 20px;
+    border-radius: 2px;
+    border: .5px dashed #474b57;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    color: #7c88a0;
+}
+
+.buy-sell-ltc .trade .trans {
+    font-size: 14px;
+    line-height: 35px;
+}
+
+.buy-sell-ltc .trade .trans .trans-tit {
+    display: inline-block;
+    min-width: 36px;
+    margin-right: 5px;
+    color: #7c88a0;
+}
+
+.buy-sell-ltc .trade .trans .trans-cont {
+    color: #cdd1ea;
+}
+
+.el-button {
+    display: inline-block;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    -webkit-appearance: none;
+    outline: 0;
+    margin: 0;
+    transition: .1s;
+    font-weight: 500;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.el-button:focus,
+.el-button:hover {
+    color: #409EFF;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+}
+
+.el-button:focus,
+.el-button:hover {
+    color: #409EFF;
+    border-color: #c6e2ff;
+    background-color: #ecf5ff;
+    outline: 0;
+}
+
+.el-button:active {
+    outline: 0;
+}
+
+.buy-sell-ltc .trade .btn-green {
+    border-radius: 2px;
+    background-color: #33ae72;
+}
+
+.buy-sell-ltc .trade .btn-green:hover {
+    background-color: #3fbd80;
+    border: 2px solid rgba(5, 5, 5, .08);
+}
+
+.buy-sell-ltc .trade .btn-green:active {
+    background-color: #319464;
+    border: 2px solid rgba(5, 5, 5, .08);
+}
+
+.buy-sell-ltc .trade .transBtn {
+    box-sizing: border-box;
+    width: 100%;
+    height: 36px;
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 10px;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 0;
+}
+
+.buy-sell-ltc .buyOut {
+    padding-left: 20px;
+}
+
+.redFont {
+    color: #ee6560;
+}
+
+.buy-sell-ltc .trade .btn-red {
+    border-radius: 2px;
+    background-color: #ee6560;
+}
+
+.buy-sell-ltc .trade .btn-red:hover {
+    background-color: #c14e56;
+    border: 2px solid rgba(5, 5, 5, .08);
+}
+
+.buy-sell-ltc .trade .btn-red:active {
+    background-color: #a33c43;
+    border: 2px solid rgba(5, 5, 5, .08);
+}
+
+.trade-content ul li label {
+    display: block;
+}
+
+/* ========================== right-side-bottom styling ends ========================= */
+
+/* ========================== order book styling ends ========================= */
+
+#order-book {
+    /* float: right;
+    width: 37.3%;
+    min-width: 329px; */
+    height: 325px;
+    background-color: #272935;
+}
+
+.order-book-container {
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.order-book-cont {
+    width: 100%;
+    height: 100%;
+    padding: 10px 0 20px;
+}
+
+.order-book-cont dl {
+    margin: 0;
+}
+
+.order-book-cont dd,
+.order-book-cont dt {
+    padding: 0 20px;
+    margin: 0 0 5px;
+}
+
+.order-book-cont dd .inner,
+.order-book-cont dt .inner {
+    cursor: pointer;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.order-book-cont dd .inner .layer,
+.order-book-cont dd .inner .price,
+.order-book-cont dt .inner .layer,
+.order-book-cont dt .inner .price {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.order-book-cont dd .inner span,
+.order-book-cont dt .inner span {
+    font-size: 12px;
+    line-height: 20px;
+    color: #cdd1ea;
+    text-align: left;
+}
+
+.order-book-cont dt .inner span {
+    color: #7c88a0;
+}
+
+.order-book-cont dd .inner .amount,
+.order-book-cont dt .inner .amount {
+    -ms-flex: 1;
+    flex: 1;
+    text-align: right;
+}
+
+.order-book-cont dd .red .price,
+.order-book-cont dt .red .price {
+    color: #ee6560;
+}
+
+.order-book-cont .average {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #cdd1ea;
+}
+
+.order-book-cont .average .refPrice {
+    font-size: 14px;
+    color: #7c88a0;
+    margin-left: 5px;
+}
+
+.order-book-cont dd .green .price,
+.order-book-cont dt .green .price {
+    color: #33ae72;
+}
+
+/* ========================== Order book styling ends ========================= */
+
+/* ========================== second-section styling starts ===================== */
+
+.second-section {
+    padding-top: 5px;
+}
+
+.second-section .left-side-col {
+    min-height: 370px;
+    height: 370px;
+}
+
+.second-section .nav-tabs .nav-link {
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+.second-section .nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    background: transparent;
+}
+
+#home2 ul li {
+    padding-right: 30px;
+    display: inline-block;
+    color: #7c88a0;
+}
+
+/* ========================== second-section styling ends ===================== */
+
+/* ======================== market trades styling starts =================== */
+
+#trades-wrap {
+    /* float: right;
+    width: 27.89%;
+    min-width: 327px; */
+    height: 370px;
+    background-color: #272935;
+}
+
+.tradesWrap {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    color: #cdd1ea;
+}
+
+.tradesWrap h3 {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 40px;
+    border-bottom: 1px solid #2e313a;
+}
+
+.tradesWrap dl {
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
+    padding: 0 10px;
+    font-size: 12px;
+    overflow-y: auto;
+}
+
+.tradesWrap dd,
+.tradesWrap dt {
+    margin: 0 0 5px;
+}
+
+.tradesWrap dd .inner,
+.tradesWrap dt .inner {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.tradesWrap dd .inner span:first-of-type,
+.tradesWrap dt .inner span:first-of-type {
+    min-width: 90px;
+}
+
+.tradesWrap dd .inner .type,
+.tradesWrap dt .inner .type {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.tradesWrap dt .inner span {
+    color: #7c88a0;
+}
+
+.tradesWrap dd .green .type,
+.tradesWrap dt .green .type {
+    color: #33ae72;
+}
+
+/* ======================== market trades styling ends =================== */
+
+/* ========================== coine detail section styling starts ======================= */
+
+#coin-detail {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    background-color: #272935;
+}
+
+.coinDetail {
+    width: 100%;
+    height: 100%;
+}
+
+.coinDetail .coinDetailCon {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    padding-bottom: 0;
+    box-sizing: border-box;
+    color: #7c88a0;
+    font-size: 14px;
+    text-align: left;
+}
+
+.coinDetail .coinDetailCon li {
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    border-bottom: 1px solid #2e313a;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.coinDetail .coinDetailCon li .white {
+    color: #cdd1ea;
+}
+
+.coinDetail .coinDetailCon .ConText {
+    height: auto;
+    width: 100%;
+    text-align: left;
+}
+
+.coinDetail .coinDetailCon .ConText div {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 20px;
+    height: 20px;
+    color: #c7cce6;
+}
+
+.coinDetail .coinDetailCon .ConText p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+}
+
+.coinDetail .coinDetailCon li div {
+    width: 49%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: nowrap;
+}
+
+.coinDetail .coinDetailCon li div span {
+    display: block;
+    float: left;
+    width: 140px;
+}
+
+.coinDetail .coinDetailCon li div a {
+    color: #5b90e4;
+}
+
+.coinDetail .coinDetailCon li:last-of-type {
+    border: 0;
+}
+
+/* ========================== coine detail section styling ends ======================= */
+
+/* ======================== footer styling strts ========================================== */
+
+#footer {
+    width: 100%;
+    background-color: #272935;
+    padding: 50px 0;
+}
+
+#footer .right-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer .right-content ul {
+    display: inline-block;
+}
+
+#footer .right-content ul li,
+#footer .right-content ul li a,
+#footer p {
+    color: #838da2;
+    font-size: 12px;
+}
+
+#footer h5 {
+    color: #fff;
+}
+
+/* footer socail icons */
+
+#social_icon_footer {
+    padding: 20px 0;
+    // background-color: #dedede;
+}
+
+#social_icon_footer a {
+    color: #333;
+}
+
+#social_icon_footer .social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+#social_icon_footer .social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+      Multicoloured Hover Variations
+  */
+
+#social_icon_footer #social-fb:hover {
+    color: #3B5998;
+}
+
+#social_icon_footer #social-tw:hover {
+    color: #4099FF;
+}
+
+#social_icon_footer #social-gp:hover {
+    color: #d34836;
+}
+
+#social_icon_footer #social-em:hover {
+    color: #f39c12;
+}
+
+/* ======================== footer styling ends ========================================== */
