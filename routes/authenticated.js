@@ -27,7 +27,7 @@ router.get('/removeSingleOrder/:info',crypto.removeSingleOrder);                
 
                                                                                         //Admin Calls
 router.get('/profile/:id',user.profile);
-router.post('/changepass',user.changepass);
+//router.post('/changepass',user.changepass);
 router.get('/getAllUserList',user.getAllUserList);
 router.post('/getAllWithdrawRequests',crypto.getAllWithdrawRequests);
 router.get('/getUserCoinsDetails',crypto.getUserCoinsDetails);

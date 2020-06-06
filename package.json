@@ -50,8 +50,7 @@
     "type": "git",
     "url": "git+"
   },
-  "bugs": {
-    "url": ""
-  },
-  "homepage": ""
+  "homepage": "",
+  "devDependencies": {},
+  "keywords": []
 }
